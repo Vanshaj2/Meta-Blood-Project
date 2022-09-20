@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Landing</title>
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+	*
+	{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+	}
+	body
+	{
+		overflow-x: hidden;
+		background: #fff;
+		min-height: 100vh;
+	}
+	#header
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 30px 100px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 10000;
+	}
+	#header .logo
+	{
+		color: #094b65;
+		font-weight: 700;
+		font-size: 2em;
+		text-decoration: none;
+	}
+	section
+	{
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	section::before
+	{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		background: linear-gradient(to top,#094b65,transparent);
+		z-index: 10;
+	}
+	section img 
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		pointer-events: none;
+	}
+	section #text
+	{
+		position: absolute;
+		color: #094b65;
+		font-size: 7vw;
+		text-align: center;
+		line-height: 0.55em;
+		font-family: 'Rancho', cursive;
+		transform: translateY(-160%);
+	}
+	section #text span
+	{
+		font-size: 0.20em;
+		letter-spacing: 2px;
+		font-weight: 400;
+		font-family: 'Poppins', sans-serif;
+	}
+	#btn
+	{
+			text-decoration: none;
+			display:inline-block;
+			padding: 8px 30px;
+			background: #fff;
+			color:#094b65;
+			font-size: 1.2em;
+			font-weight: 500;
+			letter-spacing: 1px;
+			border-radius: 40px;
+			transform: translateY(160px);
+}
+.sec
+{
+	position: relative;
+	padding: 100px;
+	background: #094b65;
+}
+.sec h2
+{
+	font-size: 3.5em;
+	color: #fff;
+	margin-bottom: 10px;
+}
+.sec p
+{
+	font-size: 1em;
+	color: #fff;
+}
+</style>
+</head>
+<body>
+    <header id="header">
+		<a href="#" class="logo">LOGO</a>
+		<ul></ul>
+	</header>
+	<section>
+		<h2 id="text"><span>It's time for a new</span><br>Blood Donation</h2>
+		<img src="bird1.png" id="bird1">
+		<img src="bird2.png" id="bird2">
+		<img src="forest.png" id="forest">
+		
+		<a href="#" id="btn">Join with us!</a>
+		<img src="rocks.png" id="rocks">
+		<img src="water.png" id="water">
+
+	</section>
+	<div class="sec">
+		<h2>About us</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos commodi a voluptatem dolorem eligendi. Molestias provident laboriosam voluptates nemo? Perferendis exercitationem qui dignissimos, obcaecati asperiores officiis eius itaque sequi nihil veniam cum saepe sapiente quisquam inventore earum minus eum laboriosam consequuntur nemo cumque error ut nam! Quibusdam dicta itaque repudiandae adipisci illum minus? Dolor odio velit quo laudantium a inventore voluptatibus maxime necessitatibus! Tenetur excepturi iste harum inventore non? Temporibus eos iusto adipisci tempore consequuntur reiciendis nam libero facilis ipsa. Impedit esse, labore possimus provident illum vel, sit nisi fugit quod adipisci laudantium pariatur nostrum? Est quae accusantium, ut sed quaerat omnis corrupti similique laborum rerum, natus accusamus. Ab culpa atque, fugiat dolore illum vitae quasi corrupti, quisquam distinctio in deserunt numquam adipisci autem natus sequi. Sunt vero aspernatur iusto inventore quibusdam eius enim aliquid atque facere nemo! Dolore aliquid, exercitationem corporis reiciendis autem dolorum vitae soluta quod animi velit fugiat aut quidem eius sed laborum itaque totam deserunt molestiae. Magni nulla hic tenetur in magnam dolor dolore voluptatum, officia alias veritatis debitis quam enim qui possimus sapiente perspiciatis fugit facere ab cupiditate? Dolorum, numquam repellat nulla nisi laudantium sapiente reprehenderit provident impedit, amet blanditiis nesciunt dolore repellendus aliquam magni.
+		</p>
+	</div>
+
+	<script>
+		let text = document.getElementById('text');
+		let bird1 = document.getElementById('bird1');
+		let bird2 = document.getElementById('birs2');
+		let btn = document.getElementById('btn');
+		let rocks = document.getElementById('rocks');
+		let forest = document.getElementById('forest');
+		let water = document.getElementById('water');
+		let header = document.getElementById('header');
+
+		window.addEventListener('scroll', function(){
+			let value = window.scollY;
+
+			text.style.top = 50 + value * -0.5 + '%';
+			bird1.style.top = value * -1.5 + 'px';
+			bird1.style.left = value * 2 + 'px';
+			bird2.style.top = value * -1.5 + 'px';
+			bird2.style.left = value * -5 + 'px';
+			btn.style,marginTop = value * 1.5 + 'px';
+			rocks.style.top = value * -0.12 + 'px';
+			forest.style.top = value * 0.25 + 'px';
+			header.style.top = value * 0.5 + 'px';
+		})
+	</script>
+
+</body>
+</html>
